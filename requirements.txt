@@ -1,0 +1,16 @@
+fastapi==0.115.3
+pydantic==2.9.2
+SQLAlchemy==2.0.20
+starlette==0.41.0
+uvicorn==0.23.2
+psycopg2-binary==2.9.9
+python-multipart==0.0.6
+email-validator==2.0.0.post2
+pytz==2024.1
+python-dateutil==2.8.2
+sib-api-v3-sdk==7.6.0
+boto3==1.33.9
+botocore==1.33.9
+python-dotenv==1.0.0
+jinja2==3.1.6
+MarkupSafe==3.0.2
