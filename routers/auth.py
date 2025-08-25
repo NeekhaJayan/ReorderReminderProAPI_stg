@@ -185,7 +185,7 @@ async def create_product(products: List[ProductCreate], db: Session = Depends(ge
                     "shop_id": existingproduct.shop_id,
                     "shopify_product_id": existingproduct.shopify_product_id,
                     "shopify_variant_id": existingproduct.shopify_variant_id,
-                    "title": existingproduct.title,
+                    "productTitle": existingproduct.title,
                     "productImage":existingproduct.image_url,
                     "reorder_days": existingproduct.reorder_days,
                     "created_at": existingproduct.created_at,
@@ -209,7 +209,7 @@ async def create_product(products: List[ProductCreate], db: Session = Depends(ge
                     "shop_id": new_product.shop_id,
                     "shopify_product_id": new_product.shopify_product_id,
                     "shopify_variant_id": new_product.shopify_variant_id,
-                    "title": new_product.title,
+                    "productTitle": new_product.title,
                     "productImage":new_product.image_url,
                     "reorder_days": new_product.reorder_days,
                     "created_at": new_product.created_at,
@@ -259,12 +259,12 @@ async def update_product(product_id: int,product: UpdateProduct,db: Session = De
                         except Exception as e:
                             db.rollback()
                             raise HTTPException(status_code=500, detail=f"Error parsing order date: {str(e)}")
-            reorder_details.append({
+        reorder_details.append({
                     "product_id": existing_product.product_id,
                     "shop_id": existing_product.shop_id,
                     "shopify_product_id": existing_product.shopify_product_id,
                     "shopify_variant_id": int(existing_product.shopify_variant_id),
-                    "title": existing_product.title,
+                    "productTitle": existing_product.title,
                     "productImage":existing_product.image_url,
                     "reorder_days": existing_product.reorder_days,
                     "created_at": existing_product.created_at,
