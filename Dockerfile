@@ -11,6 +11,10 @@ RUN apt-get update && apt-get install -y \
     curl \
  && rm -rf /var/lib/apt/lists/*
 
+ 
+# Upgrade pip, setuptools, wheel
+RUN pip install --upgrade pip setuptools wheel
+
 # Copy dependency file(s)
 COPY requirements.txt .
 
